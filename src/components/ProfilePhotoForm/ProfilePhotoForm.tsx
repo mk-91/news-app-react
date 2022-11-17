@@ -2,7 +2,7 @@ import { Button, Card, Typography } from '@mui/material';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { auth, storage } from '../../firebaseConfig';
-import { ProfilePhotoFormData } from '../helpers/interfaces';
+import { ProfilePhotoFormData } from '../../helpers/interfaces';
 import { ref, uploadBytes } from 'firebase/storage';
 
 const ProfilePhotoForm = () => {

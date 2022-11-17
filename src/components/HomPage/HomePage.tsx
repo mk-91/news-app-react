@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { API_KEY } from '../helpers/helpers';
+import { API_KEY } from '../../helpers/helpers';
 import { Typography, List } from '@mui/material';
 import Article from '../Article/Article';
-import { ArticleObj } from '../helpers/interfaces';
+import { ArticleObj } from '../../helpers/interfaces';
 
 const HomePage = () => {
   const [todaysArticles, setTodaysArticles] = useState([]);

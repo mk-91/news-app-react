@@ -1,7 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { TextField, Button, Card } from '@mui/material';
-import { LoginFormData } from '../helpers/interfaces';
+import { LoginFormData } from '../../helpers/interfaces';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../firebaseConfig';
 

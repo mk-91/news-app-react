@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import { authContext } from '../../helpers/authContext';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -11,13 +12,13 @@ import Avatar from '@mui/material/Avatar';
 import MenuItem from '@mui/material/MenuItem';
 import { Button } from '@mui/material';
 import { Link } from 'react-router-dom';
-import { NavbarProps } from '../helpers/interfaces';
+import { NavbarProps } from '../../helpers/interfaces';
 import { auth, storage } from '../../firebaseConfig';
 import { ref, getDownloadURL } from 'firebase/storage';
 
 const pages = ['Home', 'Search'];
 
-const Navbar: React.FC<NavbarProps> = ({ loggedIn }) => {
+const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
@@ -27,6 +28,8 @@ const Navbar: React.FC<NavbarProps> = ({ loggedIn }) => {
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
+
+  const loggedIn = useContext(authContext);
 
   const [profilePhoto, setProfilePhoto] = useState('/');
 
@@ -90,7 +93,7 @@ const Navbar: React.FC<NavbarProps> = ({ loggedIn }) => {
               {pages.map((page) => (
                 <Link
                   key={page}
-                  to={page === 'Home' ? '/' : '/serch'}
+                  to={page === 'Home' ? '/' : '/search'}
                   style={{ textDecoration: 'none', color: 'black' }}
                 >
                   <MenuItem onClick={handleCloseNavMenu}>

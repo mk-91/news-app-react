@@ -1,9 +1,9 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { SearchFormData } from '../helpers/interfaces';
+import { SearchFormData, SearchFormProps } from '../../helpers/interfaces';
 import { Card, TextField, Button } from '@mui/material';
 
-const SearchForm = () => {
+const SearchForm: React.FC<SearchFormProps> = ({ setKeyword }) => {
   // 1. Import i wywołanie useForm (z odpowiednim interfejsem)
   // 2. Stwórz pustą funkcję liftKeywordUp
   // 3. JSX:
@@ -15,7 +15,7 @@ const SearchForm = () => {
   const { register, handleSubmit } = useForm<SearchFormData>();
 
   const liftKeywordUp = ({ keyword }: SearchFormData) => {
-    console.log(keyword);
+    setKeyword(keyword);
   };
 
   return (

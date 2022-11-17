@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArticleProps } from '../helpers/interfaces';
+import { ArticleProps } from '../../helpers/interfaces';
 import { ListItem, ListItemText, Card } from '@mui/material';
 
 const Article: React.FC<ArticleProps> = ({ art }) => {

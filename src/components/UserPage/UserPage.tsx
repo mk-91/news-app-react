@@ -1,11 +1,13 @@
-import React from 'react';
-import { NavbarProps as UserPageProps } from '../helpers/interfaces';
+import { useContext } from 'react';
+import { NavbarProps as UserPageProps } from '../../helpers/interfaces';
 import { auth } from '../../firebaseConfig';
 import { Typography, Button, Card } from '@mui/material';
 import { signOut } from 'firebase/auth';
 import ProfilePhotoForm from '../ProfilePhotoForm/ProfilePhotoForm';
+import { authContext } from '../../helpers/authContext';
 
-const UserPage: React.FC<UserPageProps> = ({ loggedIn }) => {
+const UserPage = () => {
+  const loggedIn = useContext(authContext);
   return (
     <>
       {loggedIn && auth.currentUser && (
