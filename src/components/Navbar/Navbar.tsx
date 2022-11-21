@@ -60,7 +60,7 @@ const Navbar = () => {
     <AppBar position='static'>
       <Container maxWidth='xl'>
         <Toolbar disableGutters>
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{ flexGrow: 1 }}>
             <IconButton
               size='large'
               aria-label='account of current user'
@@ -110,7 +110,7 @@ const Navbar = () => {
             href=''
             sx={{
               mr: 2,
-              display: { xs: 'flex', md: 'none' },
+              display: 'flex',
               flexGrow: 1,
               fontFamily: 'Roboto',
               fontWeight: 100,
@@ -119,7 +119,7 @@ const Navbar = () => {
               textDecoration: 'none',
             }}
           >
-            SDA NEWS
+            NEWS APP
           </Typography>
           <Box sx={{ flexGrow: 0 }}>
             {/* 1. W zależności od stanu loggedIn, ustaw atrybut "to" Linka na "/user" lub "/login". Jeżeli loggedIn jest równe true, to "/user", jeżeli loggedIn jest równe false to "/login" */}

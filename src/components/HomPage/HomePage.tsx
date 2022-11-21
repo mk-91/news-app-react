@@ -9,10 +9,6 @@ const HomePage = () => {
   const [todaysArticles, setTodaysArticles] = useState([]);
 
   useEffect(() => {
-    // 2022-10-25, rrrr-mm-dd
-    // W zmiennej date zapisz wczorajszą datę (24.10.2022), skorzystaj z obiektu Date który jest wbudowany w js
-    // turnary operator
-    // const date = ...
     const today = Date.now();
     const yesterday = new Date(today - 10000000);
     const year = yesterday.getFullYear();
